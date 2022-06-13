@@ -12,8 +12,9 @@ def search(request):
         word=request.POST['tex']
         a=Feature(question=word)
         b=len(word)
-        if b==0:
-            return HttpResponse("kindly enter some data")
+        if b== 0 :
+            print("kindly enter some data")
+        
         else:
             a.save()
             return HttpResponse("Thank you for submitting your question ")
