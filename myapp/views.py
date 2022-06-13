@@ -1,6 +1,6 @@
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
 
 from .models import Feature
 import string
@@ -21,7 +21,7 @@ def search(request):
         
         else:
             a.save()
-            return HttpResponse("Thank you for submitting your question ")
+            return redirect("all")
         
 
 def all(request):
