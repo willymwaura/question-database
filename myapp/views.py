@@ -11,7 +11,7 @@ def index(request):
 def search(request):
         word=request.POST['tex']
         a=Feature(question=word)
-        b=len(a)
+        b=len(word)
         if b==0:
             return HttpResponse("kindly enter some data")
         else:
