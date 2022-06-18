@@ -3,6 +3,9 @@ form{
     border-bottom: 50px;
 
 }
+form.input{
+  height: 100px;
+}
 ul.li{
   
   font-size: 10px;

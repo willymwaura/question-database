@@ -16,7 +16,8 @@
     <div class="container">
     <form method='POST'action='search' enctype="multipart/form-data">
         {%csrf_token%}
-       <input type="text" placeholder="enter your question">
+       <input type="text" placeholder="enter your question" name="tex" size="40" height="30"><br>
+       <br><br>
         
         <button class="search">submit</button>
      </form>
