@@ -2,26 +2,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href= "{% static 'app.css' %}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>questions Database</title>
+    <style>
+body{
+    margin: 0; 
+    padding: 0;
+    background: #19161c;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    height: 80px;
+    background: none;
+    border: 4px solid #ffd52d;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Comic Sans MS;
+    font-size: 26px;
+    color: #ffd52d;
+    outline: none;
+}
+
+p{
+    color: white;
+    text-align: center;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+.submit{
+    color: black;
+    background-color: blue;
+    border: solid 1px blue;
+    border-radius: 9px;
+    padding: 6px;
+    transition: 0.6s;
+    margin-left: 40%;
+}
+.submit:hover{
+    color: blue;
+    background-color: transparent;
+    border: solid 1px blue;
+}
+    </style>
 </head>
 <body>
-    <div class='app'>
         <h1>CCI questions database</h1>
         <p>ask any questions anonymously </p>
-    </div>
-    <div class="container">
-    <form method='POST'action='search' enctype="multipart/form-data">
-        {%csrf_token%}
-        <textarea  placeholder="enter your questions here" name="tex" >
+   
+         <form method='POST'action='search' enctype="multipart/form-data">
+            {%csrf_token%}
 
-        </textarea>
-        
-        <button class="search">submit</button>
-     </form>
-    </div>
-</body>
+            <div class="box">
+            <input type="text" class="input" name="tex" required >
+            </div> 
+            <br><br>
+            <div> 
+            <input type="submit" class="submit" value="submit">   
+            </div>
+        </form>
+</body> 
 </html>

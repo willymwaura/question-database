@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Feature
+from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
@@ -12,7 +13,7 @@ def search(request):
         word=request.POST['tex']
         a=Feature(question=word)
         a.save()
-        return HttpResponse("Thank you for submitting your question ")
+        return redirect('all')
         
 
 def all(request):
