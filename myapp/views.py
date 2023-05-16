@@ -10,10 +10,13 @@ def index(request):
     return render(request,'index.html')
 
 def search(request):
-        word=request.POST['tex']
-        a=Feature(question=word)
-        a.save()
-        return redirect('all')
+    word = request.POST.get('tex', '')
+    if not word:
+        return render(request, 'index.html')
+    
+    a = Feature(question=word)
+    a.save()
+    return redirect('all')
         
 
 def all(request):
